@@ -19,11 +19,11 @@ module.exports.run = async ({ event, api, args, }) => {
     const language = args[2];
     
     if (!username) {
-      return api.sendMessage("⚠️ | Please enter a username!", event.threadID, event.messageID);
+      return api.sendMessage("⚠️ | Please enter a username!");
     } else if (!["std", "taiko", "catch", "mania"].includes(mode)) {
-      return api.sendMessage("⚠️ | Please enter a valid mode (std, taiko, catch, mania)!", event.threadID, event.messageID);
+      return api.sendMessage("⚠️ | Please enter a valid mode (std, taiko, catch, mania)!");
     } else if (!["en", "cn"].includes(language)) {
-      return api.sendMessage("⚠️ | Please enter a valid language (cn, en)!", event.threadID, event.messageID);
+      return api.sendMessage("⚠️ | Please enter a valid language (cn, en)!");
     } else { 
       try {
         const BASE_URL = `https://image.thum.io/get/width/1920/crop/400/fullpage/noanimate/https://osu-sig.vercel.app/card?user=${username}&mode=${mode}&lang=${language}&w=2002&h=1165&animation=false`;
