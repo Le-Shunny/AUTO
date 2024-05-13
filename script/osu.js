@@ -32,7 +32,7 @@ module.exports.run = async ({ event, api, args, }) => {
         };
         form.attachment = [];
         form.attachment[0] = await global.utils.getStreamFromURL(BASE_URL);
-        api.sendMessage(form, event.threadID, event.messageID);
+        api.sendMessage(form);
     }
     catch (e) {
       api.sendMessage("Unknown API error");
